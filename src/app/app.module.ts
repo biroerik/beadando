@@ -6,20 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DvdListComponent } from './dvd-list/dvd-list.component';
 import { DvdComponent } from './dvd-list/dvd/dvd.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { CartItemComponent } from './shopping-cart/cart-item/cart-item.component';
+import { RentComponent } from './rent/rent.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DvdFormComponent } from './dvd-form/dvd-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { RentItemComponent } from './rent/cart-item/rent-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DvdListComponent,
     DvdComponent,
-    ShoppingCartComponent,
-    CartItemComponent,
+    RentComponent,
+    RentItemComponent,
     DvdFormComponent,
     UserFormComponent,
     CategoryFormComponent

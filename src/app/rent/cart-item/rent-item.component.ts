@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { Dvd } from 'src/app/models/dvd';
 
 @Component({
-  selector: 'app-cart-item',
-  templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  selector: 'app-rent-item',
+  templateUrl: './rent-item.component.html',
+  styleUrls: ['./rent-item.component.css']
 })
-export class CartItemComponent implements OnInit {
+export class RentItemComponent implements OnInit {
 
   @Input()
   dvd!: Dvd;
