@@ -1,1 +1,10 @@
-<p>cart-item works!</p>
+<div class="row">
+    <div class="col-md-9" style="border: 5px;">
+        <p *ngIf="dvd.renter">renter: {{ dvd.renter.firstName }} {{ dvd.renter.lastName }}</p>
+        <p>movie: {{ dvd.title }}</p>
+
+        <hr>
+    </div>
+</div>
+
+

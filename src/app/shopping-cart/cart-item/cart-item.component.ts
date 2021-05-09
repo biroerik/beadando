@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
+import { Dvd } from 'src/app/models/dvd';
 
 @Component({
   selector: 'app-cart-item',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  dvd!: Dvd;
+
+  constructor(private router: Router) { }
+
 
   ngOnInit(): void {
   }
