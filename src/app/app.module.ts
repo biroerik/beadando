@@ -12,6 +12,8 @@ import { DvdFormComponent } from './dvd-form/dvd-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
 import { RentItemComponent } from './rent/cart-item/rent-item.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserItemComponent } from './user-list/user-item/user-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RentItemComponent } from './rent/cart-item/rent-item.component';
     RentItemComponent,
     DvdFormComponent,
     UserFormComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    UserListComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,

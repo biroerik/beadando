@@ -11,11 +11,18 @@ export class RentItemComponent implements OnInit {
 
   @Input()
   dvd!: Dvd;
+  late:boolean=false;
 
   constructor(private router: Router) { }
 
 
   ngOnInit(): void {
+    let today=new Date();
+    let newdate=new Date(this.dvd.date);
+    if (newdate>today) {
+      this.late=true;
+    }
+    console.log(this.late);
   }
 
 }

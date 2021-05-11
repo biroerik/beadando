@@ -16,7 +16,13 @@
                 <small *ngIf="imgUrl.errors.pattern">Image URL must be a valid URL.</small>
             </div>
             <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" formControlName="status" placeholder="szabad, kikölcsönzött, selejtezett">
+            <select class="form-control" id="status" formControlName="status">
+                <option selected>Choose...</option>
+                <option value="szabad">szabad</option>
+                <option value="kikölcsönzött">kikölcsönzött</option>
+                <option value="selejtezett">selejtezett</option>
+              </select>
+            <!--<input type="text" class="form-control" id="status" formControlName="status" placeholder="szabad, kikölcsönzött, selejtezett"> -->
             <label for="renter">renter</label>
             <select [compareWith]="compareUsers" class="form-control" id="renter" formControlName="renter">
                 <option *ngFor="let user of users" [ngValue]="user">{{ user.firstName }} {{ user.lastName }}</option>
