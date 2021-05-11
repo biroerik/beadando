@@ -16,4 +16,12 @@ export class UserService {
   async createUser(user: User) {
     return this.http.post<User>('/api/users', user).toPromise();
   }
+  async loadUsers() {
+    return this.http.get<User[]>('/api/users').toPromise();
+  }
+  async filterUsers(search: string) {
+    return this.http.get<User[]>('/api/users', {
+      params: { search }
+    }).toPromise();
+  }
 }

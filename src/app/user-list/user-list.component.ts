@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  users: User[] = [];
 
-  ngOnInit(): void {
+  searchQuery: string;
+
+  constructor(private userService: UserService) { }
+
+  async ngOnInit() {
+    this.users = await this.userService.loadUsers();
+  }
+
+  async search() {
+    this.users = await this.userService.filterUsers(this.searchQuery);
   }
 
 }

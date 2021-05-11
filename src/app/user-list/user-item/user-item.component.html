@@ -1,1 +1,13 @@
-<p>user-item works!</p>
+<div class="row">
+    <div class="col-md-9" style="border: 5px;">
+        <h5>
+            {{ user.firstName }} {{ user.lastName }}
+            <span class="badge badge-success">{{ user.age }} years old</span>
+            <button class="btn btn-sm btn-primary" (click)="navigateToUserForm(user.id)">Edit</button>
+        </h5>
+        <p>{{ user.tel }}</p>
+        <p>{{ user.address }}</p>
+        <p>{{ user.szemelyi }}</p>
+        <hr>
+    </div>
+</div>

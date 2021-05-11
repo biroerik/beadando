@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user-item',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  user!: User;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+     
+  }
+
+  navigateToUserForm(id) {
+    this.router.navigate([ '/user-form' ], {
+      queryParams: {
+        id: id
+      }
+    });
   }
 
 }
