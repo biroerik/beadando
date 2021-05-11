@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -25,15 +26,24 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService) { }
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const id = this.activatedRoute.snapshot.queryParams.id;
+
+    if (id) {
+      const dvd = await this.userService.getUserById(id);
+      this.userForm.setValue(dvd);
+    }
   }
 
   async createUser() {
     const user = this.userForm.value;
     this.successMessage = '';
     this.errorMessage = '';
+    this.router.navigateByUrl('/user-list');
 
     try {
       const userAdded = await this.userService.createUser(user);

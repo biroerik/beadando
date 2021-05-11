@@ -1,14 +1,15 @@
-<div class="row mt-2">
+<!-- <div class="row mt-2">
     <div class="col-md-7">
         <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Type a dvd title ...">
     </div>
     <div class="col-md-2">
         <button class="btn btn-primary" (click)="search()">Search</button>
     </div>
-</div>
+</div> -->
 <div class="row">
     <div class="col-md-8">
         <h5>Users</h5>
+        <br>
         <div class="row">
             <div class="col-md-6" *ngFor="let user of users">
                 <app-user-item [user]="user"></app-user-item>

@@ -24,4 +24,7 @@ export class UserService {
       params: { search }
     }).toPromise();
   }
+  async getUserById(id: string) {
+    return this.http.get<User>('/api/users/' + id).toPromise();
+  }
 }
